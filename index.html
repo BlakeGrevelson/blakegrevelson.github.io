@@ -3,36 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя страница</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Dating App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать!</h1>
-        <p>Это моя первая веб-страница.</p>
-        <ul>
-            <li>Пункт 1</li>
-            <li>Пункт 2</li>
-            <li>Пункт 3</li>
-        </ul>
+    <div class="profile-card">
+        <img src="https://placekitten.com/400/400" alt="Profile Photo" class="profile-image">
+        <div class="profile-info">
+            <div class="profile-name">Мурка</div>
+            <div class="profile-age">2 года</div>
+            <div class="profile-bio">
+                Люблю гулять по крышам, мурлыкать и кушать вискас. Ищу котика для совместных прогулок.
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="button dislike" onclick="dislike()">✕</button>
+            <button class="button like" onclick="like()">♥</button>
+        </div>
     </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function like() {
+            tg.showPopup({
+                title: 'Лайк!',
+                message: 'Вы поставили лайк профилю',
+                buttons: [{text: 'OK'}]
+            });
+        }
+
+        function dislike() {
+            tg.showPopup({
+                title: 'Пропуск',
+                message: 'Вы пропустили профиль',
+                buttons: [{text: 'OK'}]
+            });
+        }
+    </script>
 </body>
 </html> 

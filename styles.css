@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--tg-theme-bg-color, #f0f0f0);
+    color: var(--tg-theme-text-color, #000000);
+}
+
+.profile-card {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--tg-theme-secondary-bg-color, white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.profile-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.profile-info {
+    padding: 20px;
+}
+
+.profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-age {
+    color: var(--tg-theme-hint-color, #999);
+    margin-bottom: 15px;
+}
+
+.profile-bio {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+.dislike {
+    background-color: #ff4444;
+    color: white;
+}
+
+.like {
+    background-color: #44dd88;
+    color: white;
+} 
